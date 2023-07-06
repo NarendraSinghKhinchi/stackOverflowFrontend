@@ -2,14 +2,7 @@ import React from 'react'
 import { Box, Typography} from '@mui/material'
 import { Link } from 'react-router-dom'
 function Post({data}) {
-  const buttonLikeBoxStyles = {
-    display:"inline-block",
-    border:"1px solid rgb(0,0,0,0.2)",
-    marginRight:"10px",
-    padding:"0 5px",
-    borderRadius:"5px",
-    fontSize:'1em'
-  }
+  // console.log(data);
   return (
     <Box
       border="1px solid rgb(0,0,0,0.2)"
@@ -17,10 +10,14 @@ function Post({data}) {
       p='10px'
       borderRadius='10px'
     >
-      <Typography sx={buttonLikeBoxStyles} >votes: {data.votes}</Typography>
-      <Typography sx={buttonLikeBoxStyles} >answers: {data.answers.length}</Typography>
-      <Typography sx={buttonLikeBoxStyles}  >views: {data.views}</Typography>
-      <Link style={{textDecoration:"none",color:"#000"}}>
+      <Typography className='btn_l_box' >votes: {data.votes}</Typography>
+      <Typography className='btn_l_box' >answers: {data.answers.length}</Typography>
+      <Typography className='btn_l_box'  >views: {data.views}</Typography>
+      
+      <Link 
+        to= {`/question/${data._id}`}
+        style={{textDecoration:"none",color:"#000"}}
+      >
         <Typography fontSize={22} 
           fontWeight={500}
           sx={{
@@ -29,7 +26,6 @@ function Post({data}) {
           }}
         
         >{data.title}</Typography>
-        
       </Link>
       <Typography gutterBottom >
         {
@@ -39,7 +35,7 @@ function Post({data}) {
       </Typography>
       {
         data.tags.map(tag =>(
-          <Typography sx={buttonLikeBoxStyles} >{tag}</Typography>
+          <Typography gutterBottom key={tag} className='btn_l_box' >{tag}</Typography>
         ))
       }
     </Box>

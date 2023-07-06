@@ -2,9 +2,16 @@ import React from 'react' ;
 import {Link} from 'react-router-dom'
 import logo from '../Assets/logo.svg' ;
 import { Box, Button } from '@mui/material';
-import { buttonStyles } from '../MaterialUITheme/customStyles';
+import { useDispatch,useSelector } from 'react-redux';
+import { loggedOut } from './Slices/userSlice';
+
 function Navbar() {
   
+  const userStatus = useSelector(state => state.user.status);
+  const dispatch = useDispatch();
+  const handleLogOut = ()=>{
+    dispatch(loggedOut());
+  }
   return (
     <Box
       bgcolor='#ffffff'
@@ -18,21 +25,36 @@ function Navbar() {
       sx={{
         // width:"100%",
         display:"flex",
-        justifyContent:"space-between"
+        justifyContent:"space-between",
       }}
     >
-      <Link to="/">
+      <Link to="/"
+        style={{textDecoration:"none"}}
+      >
         <img src={logo} style={{
           width:"50px",
           height:"50px",
           marginLeft:"10px"
         }} alt='logo'></img>
+        Home
       </Link>
-      
-      <div>
-        <Button  sx={{...buttonStyles,marginRight:"10px"}} variant='contained'>Log In</Button>
-        <Button  sx={{...buttonStyles,marginRight:"10px"}} variant='contained'>Sign Up</Button>
-      </div>
+      {
+        userStatus === 'logged out' ?
+        (  
+          <div>
+            <Link to='/user/login'>
+              <Button className='btn' sx={{marginRight:"10px"}} variant='contained'>Log In</Button>
+            </Link>
+            <Link to='/user/register'>
+              <Button className='btn'  sx={{marginRight:"10px"}} variant='contained'>Sign Up</Button>
+            </Link>
+          </div>
+        )
+        :
+        (
+          <Button onClick={handleLogOut} className='btn' sx={{marginRight:"10px"}} variant='contained'>Log out</Button>
+        )
+      }
     </Box>
   )
 }

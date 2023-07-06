@@ -1,0 +1,72 @@
+.auth_modal{
+    width:280px ;
+    padding:15px ;
+    text-align: center;
+    color: white;
+    box-sizing: border-box;
+}
+.auth_modal_wrapper{
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 10%, rgba(0,212,255,1) 100%);
+    box-sizing:border-box ;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 1s;
+}
+.auth_modal_top{
+    width:100vw ;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.auth_input{
+    width: 100% ;
+    height: 40px;
+    resize:none ;
+    border: none ;
+    outline: none ;
+    background-color:rgb(18, 18, 18,0.1) ;
+    font-size: 18px ;
+    margin-bottom: 22px ;
+    box-sizing:border-box ;
+    color: white;
+    text-align: center;
+    margin-top: 5px;
+}
+.auth_btn{
+    font-size: 18px ;
+    color: white;
+    background-color:rgb(18, 18, 18,0.1) ;
+    margin-bottom: 15px;
+    border: none ;
+    width:100px ;
+    height: 40px;
+    padding: 3px;
+    cursor: pointer;
+}
+.message_box{
+    background-color: rgb(10, 154, 226);
+    font-size: 18px;
+    color: rgb(246, 245, 245);
+    position: absolute;
+    padding: 10px;
+    font-weight: 600;
+    max-width: 250px;
+    text-align: center;
+    border: 1px solid;
+    border-radius: 10px;
+    display: none;
+    z-index: 3;
+}
+
+.btn_l_box{
+    display:inline-block !important;
+    border: 1px solid rgb(0,0,0,0.2) !important  ;
+    margin-right: 10px  !important;
+    padding: 0 5px !important ;
+    border-radius: 5px  !important;
+    font-size: 1em !important;
+}
