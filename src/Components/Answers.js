@@ -9,11 +9,7 @@ function Answers({answersArray,id}) {
   const dispatch = useDispatch();
   const answerStatus = useSelector(state=>state.answers.fetchStatus);
   const answers = useSelector(state=>state.answers.answerData);
-  useEffect(()=>{
-    if(answerStatus === 'idle'){
-      dispatch(fetchAnswers({data:answersArray,id}));
-    }
-  },[answersArray,id]);
+  
   
   if(answersArray.length == 0){
     return (
@@ -28,7 +24,12 @@ function Answers({answersArray,id}) {
       </Box>
     )
   }
-  
+  // we need to write this after the above condition otherwise we encounter error on backend
+  useEffect(()=>{
+    if(answerStatus === 'idle'){
+      dispatch(fetchAnswers({data:answersArray,id}));
+    }
+  },[answersArray,id]);
   return (
     answerStatus === "succeeded"  ?
     (
