@@ -1,7 +1,7 @@
 import axios from 'axios' ;
 
 // keeping it here it will be easy to change after deployment of backend
-const url = "https://stackoverflowclone-qt4k.onrender.com/" ;
+const url = "https://stackoverflow-au8q.onrender.com/" ;
 
 async function getAllQuestions(){
     const options = {

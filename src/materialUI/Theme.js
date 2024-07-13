@@ -5,7 +5,7 @@ const theme = createTheme({
       MuiButton: {
         styleOverrides: {
           root: {
-            backgroundColor:"rgba(112, 182, 115, 1.00)",
+            backgroundColor:"#f48225 ",
             textTransform: "capitalize" ,
             color:"white" ,
             fontWeight:"600px" ,
@@ -13,7 +13,7 @@ const theme = createTheme({
             padding: "5px 10px" ,
             width:"120px" ,
             "&:hover":{
-              backgroundColor:"#f48225 " 
+              backgroundColor:"#f48225" 
             },
             // Add media query for responsive styles
             '@media (max-width: 300px)': {

@@ -6,13 +6,15 @@
     box-sizing: border-box;
 }
 .auth_modal_wrapper{
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 10%, rgba(0,212,255,1) 100%);
+    /* background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);; */
     box-sizing:border-box ;
     font-size: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: 1s;
+    border-radius: 10px;
+    background-color: cadetblue;
 }
 .auth_modal_top{
     width:100vw ;
@@ -35,17 +37,19 @@
     color: white;
     text-align: center;
     margin-top: 5px;
+    border-radius: 5px;
 }
 .auth_btn{
     font-size: 18px ;
     color: white;
-    background-color:rgb(18, 18, 18,0.1) ;
+    background-color:rgb(18, 59, 125) ;
     margin-bottom: 15px;
     border: none ;
     width:100px ;
     height: 40px;
     padding: 3px;
     cursor: pointer;
+    border-radius: 50px;
 }
 .message_box{
     background-color: rgb(10, 154, 226);

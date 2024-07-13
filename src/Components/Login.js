@@ -19,8 +19,9 @@ function Login() {
     const passwordChange = (e)=>{setPassword(e.target.value)};
 
     const handleTransform = ()=>{
-        cotRef.current.style.width = "100%" ;
-        cotRef.current.style.height = "100%" ;
+        // cotRef.current.style.width = "100%" ;
+        // cotRef.current.style.height = "100%" ;
+        
     }
     const handleSubmit = async ()=>{
         const data = {
